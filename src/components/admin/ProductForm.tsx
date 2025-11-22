@@ -14,7 +14,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const productSchema = z.object({
   name: z.string().min(1, "Product name is required").max(200),
-  description: z.string().min(1, "Description is required").max(2000),
+  description: z.string().min(1, "Description is required").max(3000),
   price: z.string().refine((val) => !isNaN(parseFloat(val)) && parseFloat(val) > 0, {
     message: "Price must be a positive number",
   }),
